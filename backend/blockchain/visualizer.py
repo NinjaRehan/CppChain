@@ -4,7 +4,7 @@ import pygame
 import sys
 
 # Command to execute the C++ program
-cpp_command = "./main.cpp"
+cpp_command = "./build/bin/BlockchainSimulation"
 
 # Execute the C++ program and capture its output
 process = subprocess.Popen(

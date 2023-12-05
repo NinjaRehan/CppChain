@@ -13,6 +13,17 @@ Transaction generateRandomTransaction() {
     return Transaction(sender, receiver, amount);
 }
 
+void printBlockAsJSON(Block& block) {
+    cout << "{" << endl;
+    cout << "  \"index\": " << block.getIndex() << "," << endl;
+    cout << "  \"previousHash\": \"" << block.getPreviousHash() << "\"," << endl;
+    cout << "  \"merkleRoot\": \"" << block.getMerkleRoot() << "\"," << endl;
+    cout << "  \"timestamp\": \"" << block.getTimestamp() << "\"," << endl;
+    cout << "  \"nonce\": \"" << block.getNonce() << "\"," << endl;
+    cout << "  \"hash\": \"" << block.getHash() << "\"" << endl;
+    cout << "}" << endl;
+}
+
 // Function to simulate a blockchain with random blocks
 void simulateBlockchain(int numBlocks) {
     Blockchain blockchain;
@@ -40,16 +51,7 @@ void simulateBlockchain(int numBlocks) {
     }
 }
 
-void printBlockAsJSON(const Block& block) {
-    cout << "{" << endl;
-    cout << "  \"index\": " << block.getIndex() << "," << endl;
-    cout << "  \"previousHash\": \"" << block.getPreviousHash() << "\"," << endl;
-    cout << "  \"merkleRoot\": \"" << block.getMerkleRoot() << "\"," << endl;
-    cout << "  \"timestamp\": \"" << block.getTimestamp() << "\"," << endl;
-    cout << "  \"nonce\": \"" << block.getNonce() << "\"," << endl;
-    cout << "  \"hash\": \"" << block.getHash() << "\"" << endl;
-    cout << "}" << endl;
-}
+
 
 int main() {
     // Seed the random number generator
